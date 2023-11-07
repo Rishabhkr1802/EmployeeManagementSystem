@@ -37,7 +37,7 @@
     </head>
     <body>
         <div class="Footer">
-            <p><span id="Main1"><b>&copy</b></span> Indira Gandhi National open University 2020, Design and Develop By <span id="Main2"><b>Hritik</b></span></p>
+            <p><span id="Main1"><b>&copy</b></span> Indira Gandhi National open University 2020, Design and Develop By <span id="Main2"><b>Rishabh Kumar</b></span></p>
         </div>
     </body>
 </html>
