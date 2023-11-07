@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<sql:setDataSource driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost:1527/EmployeeManagementSystem" user="hritik" password="hritik" var="ds"/>
+<sql:setDataSource driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost:1527/ems" user="root" password="root" var="ds"/>
 <sql:update dataSource="${ds}" var="rs">
     insert into "project"("name", "id", "cat", "start_date", "dur", "managed_by") values ('${param.name}', ${param.id}, '${param.cat}', '${param.start_date}', ${param.dur}, '${param.managed_by}')
 </sql:update> 
