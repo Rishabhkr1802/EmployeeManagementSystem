@@ -1,11 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<sql:setDataSource driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost:1527/ems" user="root" password="root" var="ds"/>
-<sql:query dataSource="${ds}" var="rs">
-    select * from "project" where "status" = false
-</sql:query> 
-    
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,7 +26,7 @@
                     <th>Duration</th>
                     <th>Project Head</th>
                 </tr>
-                <c:forEach var="pro" items="${rs.rows}">
+<!--                <c:forEach var="pro" items="${rs.rows}">
                 <tr><td>${pro.id}</td>
                     <td>${pro.name}</td>
                     <td>${pro.cat}</td>
@@ -44,7 +36,8 @@
     select "first_name", "last_name" from "employee" where "email" = '${pro.managed_by}'
 </sql:query> 
 ${rs0.rows[0].first_name} ${rs0.rows[0].last_name}</td></tr>
-            </c:forEach></table>
+            </c:forEach>-->
+       </table>
         <%@include file="Footer.jsp" %>
     </body>
 </html>

@@ -24,8 +24,7 @@
             }
             #heading{
                 text-decoration: underline;
-                text-shadow: 2px 3px 4px black;
-                color: yellow;
+                color: black;
                 text-border: 2px solid black;
             }
             input[type=submit]{
@@ -43,8 +42,6 @@
             input[type=submit]:hover{
                 background-color: maroon;
                 color: white;
-                box-shadow: -4px -4px 5px red;
-                font-size: 25px;
             }
             .Main{
                 margin: 20px;   
@@ -53,21 +50,25 @@
     </head>
     <body>
         <div class="Main">
-        <%@include file="Header.jsp" %>
-        <%@include file="Navigation.jsp" %>
-        <div class="Login">
-            <fieldset>
-                <legend><span id="heading">Employee Login</span></legend>
-                <form action="Employee Process.jsp" method="post">
-                        Employee Id : &nbsp&nbsp&nbsp
-                        <input type="text" name="EmpId" placeholder="E-mail" maxlength="25" required><br/><br/><br/>
+            <%@include file="Header.jsp" %>
+            <%@include file="Navigation.jsp" %>
+            <div class="Login">
+                <fieldset>
+                    <legend><span id="heading">Employee Login</span></legend>
+                    <form action="EmployeeLogin" method="post">
+                        Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp&nbsp
+                        <input type="text" name="EmpEmail" id="EmpEmail" placeholder="Email" maxlength="25" required>
+<!--                        <span style="color: red;font-size: 20px;">Please enter email...</span><br/><br/><br/>-->
+                        <br/><br/><br/>
                         Password &nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp
-                        <input type="password" name="Pass" placeholder="Password" maxlength="10" required><br/><br/><br/>
+                        <input type="password" name="EmpPass" id="EmpPass" placeholder="Password" maxlength="10" required>
+                        <!--<span style="color: red;font-size: 20px;">Please enter Password...</span><br/><br/><br/>-->
+                        <br/><br/><br/>
                         <input type="submit" value="Login">
-                </form>
-            </fieldset>
-        </div>
-        <%@include file="Footer.jsp" %>
+                    </form>
+                </fieldset>
+            </div>
+            <%@include file="Footer.jsp" %>
         </div>
     </body>
 </html>

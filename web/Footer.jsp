@@ -6,7 +6,7 @@
         <title>Footer</title>
         <style>
             .Footer{
-                background: linear-gradient(to right,black,red,black);
+                background: linear-gradient(to right,black,lightsalmon,grey);
                 border-radius: 10pc;
                 font-size: 21px;
                 text-align: center;
@@ -18,6 +18,7 @@
             }
             p{
                 color: white;
+                text-shadow: 1px 3px 4px black;
             }
             #Main1:hover{
                 color: darkblue;
@@ -29,15 +30,14 @@
                 font-family: cooper;
             }
             #Main2:hover{
-                font-size: 30px;
-                font-family: algerian;
-                color: cyan;
+                color: black;
+                text-shadow: 1px 3px 4px white;
             }
         </style>
     </head>
     <body>
         <div class="Footer">
-            <p><span id="Main1"><b>&copy</b></span> Indira Gandhi National open University 2020, Design and Develop By <span id="Main2"><b>Rishabh Kumar</b></span></p>
+            <p><span id="Main1"><b>&copy</b></span> Indira Gandhi National open University 2024, Design and Develop By <span id="Main2"><b>Rishabh Kumar</b></span></p>
         </div>
     </body>
 </html>

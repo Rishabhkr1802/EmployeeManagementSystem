@@ -7,11 +7,9 @@
         <link rel="stylesheet" href="Style.css" type="text/css" /> 
         <style>
             .Container{
-                background-color: firebrick;
-                color: lightseagreen;
-                text-shadow: -2px -4px 3px red;
-                background-image: url('Logo3.png');
-                background-repeat: no-repeat;
+                background:linear-gradient(to right,lightsalmon,grey);
+                color: gold;
+                text-shadow: -2px -4px 3px black;
                 font-family: cooper;
                 margin: 20px;
                 inline-box-align:  last;
@@ -59,7 +57,7 @@
         <div class="Container">
             <fieldset>
                 <legend>Contact Us </legend>
-                <form action="Add Contact.jsp" method="post">
+                <form action="RegisterContactUsDetails" method="post">
                     Name : <input type="text" name="C_name" required/><br/><br/>
                     E-mail : <input type="email" name="C_mail" maxlength="25" required/><br/><br/>
                     Contact No. : <input type="text" name="C_contact" maxlength="10" required/><br/><br/>

@@ -1,12 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<sql:setDataSource driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost:1527/ems" user="root" password="root" var="ds"/>
-<sql:query dataSource="${ds}" var="rs">
-    select * from "employee"
-</sql:query> 
-    
-    
+<%@ page import="java.sql.ResultSet" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,14 +22,28 @@
         </style>
     </head>
     <body>
+
+        <%
+            ResultSet rs = (ResultSet) request.getAttribute("employees");
+            while (rs.next()) {
+                String username = rs.getString("username");
+                out.println(username);
+            }
+
+        %>
+
+
         <%@include file="Header.jsp" %>
         <%@include file="Add Nav Horizontal.jsp" %>
         <h1 style="text-align: center; color: yellow; text-shadow: 1px 2px 4px gray,-1px -2px 4px salmon; font-size: 45px; font-family: cooper; background-color: red" >List of Employees</h1>
         <div class="set" >
             <h2>Name</h2><h2>Age</h2><h2>E-mail</h2><h2>Date Of Joining</h2>
-                <table><c:forEach var="emp" items="${rs.rows}">
+            <table>
+<!--                <c:forEach var="emp" items="${rs.rows}">
                 <tr><td><p style="margin-left: 10pc; color: black;">${emp.first_name}  ${emp.last_name}</p></td><td><p style="margin-left: 10pc; color: black;">${emp.age}</p></td> <td><p style="margin-left: 12pc; color: black;">${emp.email}</p></td> <td><p style="margin-left: 12pc; color: black;">${emp.doj}</p></td></tr>
-                    </c:forEach></table>
+            </c:forEach>-->
+
+            </table>
         </div> 
         <%@include file="Footer.jsp" %>
     </body>

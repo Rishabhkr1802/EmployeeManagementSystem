@@ -6,7 +6,7 @@
         <title>Navigation</title>
         <style>
             .Nav{
-                background: linear-gradient(to right,black,red,black);
+                background: linear-gradient(to right,black,lightsalmon,grey);
                 height: 50px;
                 text-align:right;
                 margin: 5px;
@@ -21,11 +21,8 @@
                 
             }
             a:hover{
-                color: white;
-                text-shadow: 3px 4px 4px black,3px 4px 4px black;
-                text-decoration: underline;
-                box-shadow: 2px 4px 3px black;
-                background-color: salmon;
+                color: yellow;
+                text-shadow: 3px 4px 4px black,-3px 4px 4px black;
             }
         </style>
     </head>
