@@ -47,6 +47,7 @@
                 <h1> From : --</h1><input type="date" name="from" required /><br/>
                 <h1> To : --</h1><input type="date" name="to" required /><br/>
                 <h1> Reason : --</h1><textarea name="reason" rows="5" cols="20" required/></textarea><br/><br/>
+            <input type="hidden" name="grant_leave" value="false"/>
                 <input type="submit" style="margin-left: 0pc;" value="Request">
             </form>
         </div>

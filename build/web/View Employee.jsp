@@ -1,4 +1,23 @@
-<%@ page import="java.sql.ResultSet" %>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+    String driver = "com.mysql.jdbc.Driver";
+    String connectionUrl = "jdbc:mysql://localhost:3306/";
+    String database = "ems?";
+    String userid = "root";
+    String password = "root";
+    try {
+        Class.forName(driver);
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,32 +38,71 @@
                 color: red;
                 text-shadow: 1px 2px 3px salmon;
             }
+            table {
+                padding: 15px;
+                margin-left: 6pc;
+                border: 2px solid black;
+                background-color: lightgoldenrodyellow;
+            }
+            th {
+                font-size: 28px;
+                font-weight: bold;
+                padding: 5px;
+                border: 2px solid black;
+            }
+            td{
+                font-size: 20px;
+                padding: 5px;
+                margin: 2px;
+                border: 1px solid black;
+                box-shadow: 1px 2px 3px black;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
 
-        <%
-            ResultSet rs = (ResultSet) request.getAttribute("employees");
-            while (rs.next()) {
-                String username = rs.getString("username");
-                out.println(username);
-            }
-
-        %>
-
-
         <%@include file="Header.jsp" %>
         <%@include file="Add Nav Horizontal.jsp" %>
         <h1 style="text-align: center; color: yellow; text-shadow: 1px 2px 4px gray,-1px -2px 4px salmon; font-size: 45px; font-family: cooper; background-color: red" >List of Employees</h1>
-        <div class="set" >
-            <h2>Name</h2><h2>Age</h2><h2>E-mail</h2><h2>Date Of Joining</h2>
-            <table>
-<!--                <c:forEach var="emp" items="${rs.rows}">
-                <tr><td><p style="margin-left: 10pc; color: black;">${emp.first_name}  ${emp.last_name}</p></td><td><p style="margin-left: 10pc; color: black;">${emp.age}</p></td> <td><p style="margin-left: 12pc; color: black;">${emp.email}</p></td> <td><p style="margin-left: 12pc; color: black;">${emp.doj}</p></td></tr>
-            </c:forEach>-->
+        
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Date of Joining</th>
+                <th>State</th>
+                <th>Address</th>
 
-            </table>
-        </div> 
+            </tr>
+            <%
+                try {
+                    connection = DriverManager.getConnection(connectionUrl + database, userid, password);
+                    statement = connection.createStatement();
+                    String sql = "select * from employee";
+                    resultSet = statement.executeQuery(sql);
+                    while (resultSet.next()) {
+            %>
+            <tr>
+                <td><%=resultSet.getString("first_name")%> <%=resultSet.getString("last_name")%></td>
+                <td><%=resultSet.getString("age")%></td>
+                <td><%=resultSet.getString("gender")%></td>
+                <td><%=resultSet.getString("email")%></td>
+                <td><%=resultSet.getString("doj")%></td>
+                <td><%=resultSet.getString("state")%></td>
+                <td><%=resultSet.getString("address")%></td>
+
+            </tr>
+            <%
+                    }
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            %>
+        </table>
         <%@include file="Footer.jsp" %>
     </body>
 </html>

@@ -85,7 +85,7 @@
                 <a href="View Employee.jsp">View Employee</a></br></br>
                 <a href="Add Project.jsp">Add Project</a></br></br>
                 <a href="View Leaves Ad.jsp">View Leaves Request</a></br></br>
-                <a href="contactReport.jsp">View Contact request</a>
+                <a href="ContactReport.jsp">View Contact request</a>
             </div>
         </div>
     </body>

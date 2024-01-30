@@ -17,7 +17,7 @@
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;
-%>
+%>   
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +25,7 @@
         <title>List of Employees</title>
         <link rel="stylesheet" href="Style.css" type="text/css" />
         <style>
-            h2{
+            h4{
                 display: inline-block;
                 margin-left: 180px;
                 color: white;
@@ -61,37 +61,31 @@
         </style>
     </head>
     <body>
-
         <%@include file="Header.jsp" %>
         <%@include file="Add Nav Horizontal.jsp" %>
-        <h1 style="text-align: center; color: yellow; text-shadow: 1px 2px 4px gray,-1px -2px 4px salmon; font-size: 45px; font-family: cooper; background-color: red" >List of Employees</h1>
-        
+        <h1 style="text-align: center; color: yellow; text-shadow: 1px 2px 4px gray,-1px -2px 4px salmon; font-size: 45px; font-family: cooper; background-color: red" >List of Contact Us Requests</h1>
         <table border="1">
             <tr>
                 <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
                 <th>Email</th>
-                <th>Date of Joining</th>
-                <th>State</th>
+                <th>Contact Number</th>
                 <th>Address</th>
+                <th>Description</th>
 
             </tr>
             <%
                 try {
                     connection = DriverManager.getConnection(connectionUrl + database, userid, password);
                     statement = connection.createStatement();
-                    String sql = "select * from employee";
+                    String sql = "select * from contact_us";
                     resultSet = statement.executeQuery(sql);
                     while (resultSet.next()) {
             %>
             <tr>
-                <td><%=resultSet.getString("first_name")%> <%=resultSet.getString("last_name")%></td>
-                <td><%=resultSet.getString("age")%></td>
-                <td><%=resultSet.getString("gender")%></td>
+                <td><%=resultSet.getString("name")%></td>
                 <td><%=resultSet.getString("email")%></td>
-                <td><%=resultSet.getString("doj")%></td>
-                <td><%=resultSet.getString("state")%></td>
+                <td><%=resultSet.getString("contact_no")%></td>
+                <td><%=resultSet.getString("address")%></td>
                 <td><%=resultSet.getString("address")%></td>
 
             </tr>

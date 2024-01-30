@@ -78,7 +78,7 @@
         <%@include file="Header.jsp"%>
         <div class="container">
             <h1 style="text-align: center; color: yellow;text-shadow: 1px 2px 4px gray,-1px -2px 4px salmon;font-size: 45px; font-family: cooper">
-                Welcome ${employee.first_name}</h1>
+                Welcome</h1>
 
             <div class="Logout">
                 <form action="EmployeeLogout" method="post">
@@ -88,8 +88,8 @@
 
             <div class="Link">
                 <br/><br/><br/>
-                <!--<a href="View Project.jsp">Check New Projects</a><br/><br/>-->
-                <a href="ViewProjects">Check New Projects</a><br/><br/>
+                <a href="View Project.jsp">Check New Projects</a><br/><br/>
+                <!--<a href="ViewProjects">Check New Projects</a><br/><br/>-->
                 <a href="Request Leaves.jsp">Request Leave</a><br/><br/>
                 <a href="View Leaves.jsp">View Leaves Status</a><br/><br/>
             </div>
