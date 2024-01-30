@@ -23,11 +23,8 @@
                 text-align: center;
             }
             #heading{
-                text-decoration: underline;
-                text-shadow: 2px 3px 4px black;
+                text-shadow: 2px 3px 4px white;
                 color: black;
-                text-shadow: 3px 2px 3px black;
-                text-border: 2px solid black;
             }
             input[type=submit]{
                 background-color: salmon;
@@ -59,7 +56,7 @@
     <body>
         <%@include file="Header.jsp" %>
         <%@include file="Navigation.jsp" %>
-        <div class="Login">
+<!--        <div class="Login">
             <fieldset>
                 <legend><span id="heading">Admin Login</span></legend>
                 <form action="Admin Navigation.jsp" method="post">
@@ -67,6 +64,18 @@
                         <input required type="text" name="adminId" placeholder="E-mail" maxlength="25" ><br/><br/><br/>
                         Password &nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp
                         <input required type="password" name="pass" placeholder="Password" maxlength="8" ><br/><br/><br/>
+                        <input type="submit" value="Login">
+                </form>
+            </fieldset>
+        </div>-->
+        <div class="Login">
+            <fieldset>
+                <legend><span id="heading">Admin Login</span></legend>
+                <form action="AdminLogin" method="post">
+                        Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp
+                        <input required type="text" name="adminuser" placeholder="E-mail" maxlength="25" ><br/><br/><br/>
+                        Password &nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp
+                        <input required type="password" name="adminpass" placeholder="Password" maxlength="8" ><br/><br/><br/>
                         <input type="submit" value="Login">
                 </form>
             </fieldset>
