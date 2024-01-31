@@ -40,10 +40,6 @@
         <servlet-class>com.register.AddProject</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ViewEmployee</servlet-name>
-        <servlet-class>com.view.ViewEmployee</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>AddLeaves</servlet-name>
         <servlet-class>com.register.AddLeaves</servlet-class>
     </servlet>
@@ -82,10 +78,6 @@
     <servlet-mapping>
         <servlet-name>AddProject</servlet-name>
         <url-pattern>/AddProject</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ViewEmployee</servlet-name>
-        <url-pattern>/ViewEmployee</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddLeaves</servlet-name>
